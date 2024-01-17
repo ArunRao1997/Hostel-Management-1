@@ -1,5 +1,6 @@
 package main;
 
+import io.github.pixee.security.BoundedLineReader;
 import static org.junit.Assert.assertEquals;
 
 import java.io.*;
@@ -14,7 +15,7 @@ public class Hostel{
 	       		BufferedReader br = new BufferedReader(new FileReader("hostel.txt"));
 	                   
 	            String line = null;
-	           while ((line = br.readLine()) != null) {
+	           while ((line = BoundedLineReader.readLine(br, 5_000_000)) != null) {
 	               String[] splited = line.split("\\s+");
 	               	 out.write(splited[0]);
 	                 out.newLine();
@@ -36,7 +37,7 @@ public class Hostel{
 	               String line = null;
 	            
 	               //write your code here !!!
-	               while ((line = br.readLine()) != null) {
+	               while ((line = BoundedLineReader.readLine(br, 5_000_000)) != null) {
 		               String[] splited = line.split("\\s+");
 		               String checkName = splited[0];
 		               //write your code here !!!
@@ -58,7 +59,7 @@ public class Hostel{
          try{
              BufferedReader br = new BufferedReader(new FileReader("hostel.txt"));
                String line = null;
-            while ((line = br.readLine()) != null) {
+            while ((line = BoundedLineReader.readLine(br, 5_000_000)) != null) {
                 String[] splited = line.split("\\s+");
 
                 String reg = Integer.toString(regNo);
