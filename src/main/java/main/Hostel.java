@@ -1,5 +1,6 @@
 package main;
 
+import java.nio.file.Files;
 import static org.junit.Assert.assertEquals;
 
 import java.io.*;
@@ -9,7 +10,7 @@ public class Hostel{
 	   public static void writedata()throws IOException {
 		   BufferedWriter out = null;
            try{
-            out = new BufferedWriter(new FileWriter("allotedhostel.txt"));
+            out = Files.newBufferedWriter("allotedhostel.txt".toPath());
             try{
 	       		BufferedReader br = new BufferedReader(new FileReader("hostel.txt"));
 	                   
