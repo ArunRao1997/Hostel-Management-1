@@ -99,7 +99,7 @@ public class Hostel{
         System.out.println("Hostel Management \n Enter the record of students! \n Type exit to end!");
         String name  = typeName();
         
-        while(!name.equals("exit")){
+        while(!"exit".equals(name)){
 
             
             System.out.println("Enter the Reg No of the student");
