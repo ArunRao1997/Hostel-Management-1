@@ -1,5 +1,6 @@
 package main;
 
+import io.github.pixee.security.BoundedLineReader;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -54,7 +55,7 @@ public class HostelTest {
 	       		BufferedReader br = new BufferedReader(new FileReader("allotedhostel.txt"));
 	                   
 	            String line = null;
-	           while ((line = br.readLine()) != null) {
+	           while ((line = BoundedLineReader.readLine(br, 5_000_000)) != null) {
 	               String[] splited = line.split("\\s+");
 	                   if(splited[0].equals(test)){
 	                	  chk = false;
